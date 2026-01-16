@@ -28,7 +28,7 @@ variable "project_name" {
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string
-  default     = "10.0.0.0/16"
+  default     = "192.168.0.0/16"
 }
 
 # Subnet CIDR Blocks Variable
@@ -38,16 +38,17 @@ variable "public_subnet_cidrs" {
   description = "List of CIDR blocks for public subnets"
   type        = list(string)
   default = [
-    "10.0.1.0/25",  # Public Subnet 1: 10.0.1.0 - 10.0.1.127 (~123 IPs)
-    "10.0.1.128/25" # Public Subnet 2: 10.0.1.128 - 10.0.1.255 (~123 IPs)
+    "192.168.1.0/25",
+    "192.168.1.128/25"
   ]
 }
+
 variable "private_subnet_cidrs" {
   description = "List of CIDR blocks for private subnets"
   type        = list(string)
   default = [
-    "10.0.2.0/25",  # Private Subnet 1: 10.0.2.0 - 10.0.2.127 (~123 IPs)
-    "10.0.2.128/25" # Private Subnet 2: 10.0.2.128 - 10.0.2.255 (~123 IPs)
+    "192.168.2.0/25",
+    "192.168.2.128/25"
   ]
 }
 
