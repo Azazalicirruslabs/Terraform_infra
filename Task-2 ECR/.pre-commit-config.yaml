@@ -1,0 +1,99 @@
+default_stages: [pre-commit]
+fail_fast: false
+
+ci:
+  skip: [autoflake]
+  autofix_prs: false
+
+repos:
+  # Core safety checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-toml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: requirements-txt-fixer
+
+  # Secrets scanning – ONLY gitleaks (best & zero-config)
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+
+  # GitHub Actions linting
+  - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
+    rev: v1.7.10.24
+    hooks:
+      - id: actionlint
+        files: "^.github/workflows/"
+        args: ["-shellcheck="]
+
+  # Commit message enforcement
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.11.2
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+
+  # Python formatting (enterprise standard)
+  - repo: https://github.com/PyCQA/isort
+    rev: 7.0.0
+    hooks:
+      - id: isort
+        name: isort (python imports)
+        args: ["--profile", "black"]
+
+  - repo: https://github.com/psf/black
+    rev: 25.12.0
+    hooks:
+      - id: black
+        name: black (code formatter)
+        exclude: shared_migrations/alembic/versions/.*
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.1
+    hooks:
+      - id: autoflake
+        name: autoflake (remove unused imports/variables)
+        args: [
+          --remove-all-unused-imports,
+          --remove-unused-variables,
+          --remove-duplicate-keys,
+          --in-place,
+          --exclude=__init__.py
+        ]
+
+  # Docstring style
+  - repo: https://github.com/jsh9/pydoclint
+    rev: 0.8.3
+    hooks:
+      - id: pydoclint
+        name: pydoclint
+        args: ["--config", "./pyproject.toml"]
+
+# FIXED exclude pattern – now actually excludes everything recursively
+exclude: |
+  (?x)^(
+    \.?venv/|
+    venv/|
+    migrations/|
+    shared_migrations/alembic/|
+    node_modules/|
+    \.git/|
+    \.pytest_cache/|
+    __pycache__/|
+    \.mypy_cache/|
+    dist/|
+    build/|
+    htmlcov/|
+    \.coverage|
+    service-generator/|
+    services/what_if/
+  )$

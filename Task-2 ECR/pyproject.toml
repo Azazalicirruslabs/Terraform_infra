@@ -1,0 +1,69 @@
+# Black configuration
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | venv
+  | migrations
+  | alembic/versions
+  | services/what_if/
+  | service-generator/
+)/
+'''
+
+# isort configuration
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+known_first_party = ["services", "shared", "shared_migrations"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+# pytest configuration
+[tool.pytest.ini_options]
+testpaths = ["tests", "services/*/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+    "--cov=services",
+    "--cov=shared",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+markers = [
+    "slow: marks tests as slow",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[project]
+name = "xai-explainability"
+version = "0.1.0"
+description = "A project for explainability in AI models"
+
+[tool.pydoclint]
+check-arg-defaults = true
+check-class-attributes = false
+exclude = '\.git|.?venv|\.tox|tests/test_data|build|service-generator/|services/what_if/'
+require-return-section-when-returning-nothing = true
+style = 'numpy'
