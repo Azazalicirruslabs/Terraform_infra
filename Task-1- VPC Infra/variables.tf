@@ -20,7 +20,7 @@ variable "environment" {
 variable "project_name" {
   description = "Name of the project - used for naming resources"
   type        = string
-  default     = "xai-explainability"
+  default     = "Task_1_VPC_INFRASTRUCTURE"
 }
 
 # VPC CIDR Block Variable
@@ -38,8 +38,9 @@ variable "public_subnet_cidrs" {
   description = "List of CIDR blocks for public subnets"
   type        = list(string)
   default = [
-    "192.168.1.0/25",
-    "192.168.1.128/25"
+    "192.168.1.0/25",   # 0-127
+    "192.168.1.128/25", # 129-255
+
   ]
 }
 

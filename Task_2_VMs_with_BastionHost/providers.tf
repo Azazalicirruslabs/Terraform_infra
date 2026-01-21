@@ -4,6 +4,14 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 6.7.0"
     }
+    tls = { # Generate PEM Key Pair
+      source  = "hashicorp/tls"
+      version = "4.1.0"
+    }
+    local = { #Save .pem file locally
+      source  = "hashicorp/local"
+      version = "2.6.1"
+    }
     random = {
       source  = "hashicorp/random"
       version = "~> 3.1"
@@ -18,7 +26,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      project     = "Task_1_VPC_INFRASTRUCTURE"
+      project     = var.project_name
       Environment = var.environment
       ManagedBy   = "Terraform"
     }

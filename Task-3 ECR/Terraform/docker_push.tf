@@ -32,7 +32,7 @@ locals {
     "gateway"        = "services/gateway/Dockerfile"
     "mainflow"       = "services/mainflow/Dockerfile"
     "regression"     = "services/regression/Dockerfile"
-    "what-if"        = "services/what_if/Dockerfile"
+    #  "what-if"        = "services/what_if/Dockerfile"
   }
 }
 

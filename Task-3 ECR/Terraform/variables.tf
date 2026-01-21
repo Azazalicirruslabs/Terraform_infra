@@ -47,7 +47,7 @@ variable "max_image_count" {
 # Docker Path
 
 locals {
-  # "Path to the project root (where docker-compose.yml is)"
+  # Path to the project root (where docker-compose.yml is)
   docker_context_path = abspath("${path.module}/..")
 }
 
