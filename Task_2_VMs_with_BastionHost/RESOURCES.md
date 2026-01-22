@@ -133,9 +133,9 @@ terraform destroy
 
 - **HashiCorp** (official Terraform tutorials)
 - **FreeCodeCamp** (full Terraform courses)
-- **TechWorld with Nana** (DevOps + Terraform explained clearly)
-- **Abhishek Veeramalla** (AWS + Terraform in Hindi)
-- **R** (cloud infrastructure tutorials)
+- **Tech Tutorials with Piyush** (Terraform Course)
+- **Abhishek Veeramalla** (AWS + Terraform)
+- **Rahul Wagh** (AWS + Terraform)
 
 ---
 
@@ -162,8 +162,6 @@ Official docs used while building the infrastructure:
 
 ### 3) Blogs & Articles
 
-Extra reading and best practices:
-
 - **Terraform Best Practices**  
   https://www.terraform-best-practices.com/
 
@@ -182,5 +180,5 @@ Extra reading and best practices:
 
 Tools used for help with code, explanations, and debugging:
 
-- **Gemini (Antigravity)**
+- **Gemini**
 - **ChatGPT**
