@@ -1,4 +1,4 @@
-# Terraform AWS Setup (Simple Version)
+# Terraform AWS Setup
 
 ## What this project builds
 
@@ -126,3 +126,61 @@ terraform plan
 terraform apply
 terraform destroy
 ```
+
+## Resources Used
+
+### 1) YouTube (Channels)
+
+- **HashiCorp** (official Terraform tutorials)
+- **FreeCodeCamp** (full Terraform courses)
+- **TechWorld with Nana** (DevOps + Terraform explained clearly)
+- **Abhishek Veeramalla** (AWS + Terraform in Hindi)
+- **R** (cloud infrastructure tutorials)
+
+---
+
+### 2) Documentation (Websites)
+
+Official docs used while building the infrastructure:
+
+- **Terraform Documentation**  
+  https://developer.hashicorp.com/terraform/docs
+
+- **Terraform AWS Provider Docs**  
+  https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
+- **Terraform TLS Provider Docs**  
+  https://registry.terraform.io/providers/hashicorp/tls/latest/docs
+
+- **AWS VPC User Guide**  
+  https://docs.aws.amazon.com/vpc/latest/userguide/
+
+- **AWS EC2 User Guide**  
+  https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
+
+---
+
+### 3) Blogs & Articles
+
+Extra reading and best practices:
+
+- **Terraform Best Practices**  
+  https://www.terraform-best-practices.com/
+
+- **AWS Blog**  
+  https://aws.amazon.com/blogs/
+
+- **Medium (Terraform tag)**  
+  https://medium.com/tag/terraform
+
+- **Dev.to (Terraform tag)**  
+  https://dev.to/t/terraform
+
+---
+
+### 4) AI Tools Used
+
+Tools used for help with code, explanations, and debugging:
+
+- **Gemini (Antigravity)**
+- **ChatGPT**
