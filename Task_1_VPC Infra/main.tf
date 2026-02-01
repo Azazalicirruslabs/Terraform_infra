@@ -51,7 +51,7 @@ resource "aws_subnet" "private" {
 
   tags = {
     Name = "${var.project_name}-private-subnet-${count.index + 1}"
-    Type = "Private"
+    Type = "private"
   }
 }
 

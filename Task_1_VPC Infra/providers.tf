@@ -18,7 +18,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      project     = "Task_1_VPC_INFRASTRUCTURE"
+      project     = var.project_name
       Environment = var.environment
       ManagedBy   = "Terraform"
     }

@@ -18,7 +18,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      project     = "RAIA- Explainability"
+      project     = var.project_name
       Environment = var.environment
       ManagedBy   = "Terraform"
     }

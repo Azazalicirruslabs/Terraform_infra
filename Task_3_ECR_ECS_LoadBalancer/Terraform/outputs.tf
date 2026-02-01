@@ -44,7 +44,7 @@ output "regression_repository_url" {
 }
 output "data_drift_repository_url" {
   description = "ECR URL for Data Drift service"
-  value       = aws_ecr_repository.services["data-drift"].repository_url
+  value       = aws_ecr_repository.services["data_drift"].repository_url
 }
 output "fairness_repository_url" {
   description = "ECR URL for Fairness service"
@@ -52,7 +52,7 @@ output "fairness_repository_url" {
 }
 output "what_if_repository_url" {
   description = "ECR URL for What-If service"
-  value       = aws_ecr_repository.services["what-if"].repository_url
+  value       = aws_ecr_repository.services["what_if"].repository_url
 }
 
 

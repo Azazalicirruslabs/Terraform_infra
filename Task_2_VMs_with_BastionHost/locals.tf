@@ -32,9 +32,9 @@ locals {
 
   # Instance Names
 
-  bastion_name    = "${var.project_name}-bastion-windows"
-  windows_vm_name = "${var.project_name}-windows-vm"
-  linux_vm_name   = "${var.project_name}-linux-vm"
+  bastion_name    = "${var.project_name}-bastion-windows" # in public subnet
+  windows_vm_name = "${var.project_name}-windows-vm"      # in private subnet
+  linux_vm_name   = "${var.project_name}-linux-vm"        # in public subnet
 
   # Security Group Ports by OS
 

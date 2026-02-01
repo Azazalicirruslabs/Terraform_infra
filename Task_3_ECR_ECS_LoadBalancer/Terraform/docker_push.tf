@@ -27,12 +27,12 @@ locals {
   dockerfile_paths = {
     "api"            = "services/API/Dockerfile"
     "classification" = "services/classification/Dockerfile"
-    "data-drift"     = "services/data_drift/Dockerfile"
+    "data_drift"     = "services/data_drift/Dockerfile"
     "fairness"       = "services/fairness/Dockerfile"
     "gateway"        = "services/gateway/Dockerfile"
     "mainflow"       = "services/mainflow/Dockerfile"
     "regression"     = "services/regression/Dockerfile"
-    #  "what-if"        = "services/what_if/Dockerfile"
+    "what_if"        = "services/what_if/Dockerfile"
   }
 }
 

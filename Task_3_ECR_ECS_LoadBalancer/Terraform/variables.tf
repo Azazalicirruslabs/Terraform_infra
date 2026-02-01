@@ -26,12 +26,12 @@ variable "services" {
   default = [
     "api",            # services/API
     "classification", # services/classification
-    "data-drift",     # services/data_drift
+    "data_drift",     # services/data_drift
     "fairness",       # services/fairness
     "gateway",        # services/gateway
     "mainflow",       # services/mainflow
     "regression",     # services/regression
-    "what-if"         # services/what_if
+    "what_if"         # services/what_if
   ]
 }
 

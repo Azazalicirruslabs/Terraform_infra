@@ -20,7 +20,7 @@ variable "environment" {
 variable "project_name" {
   description = "Name of the project - used for naming resources"
   type        = string
-  default     = "Task_1_VPC_INFRASTRUCTURE"
+  default     = "raia"
 }
 
 # VPC CIDR Block Variable

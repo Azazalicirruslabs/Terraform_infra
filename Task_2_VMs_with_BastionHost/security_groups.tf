@@ -15,7 +15,7 @@ resource "aws_security_group" "bastion" {
     from_port   = local.bastion_ports.rdp # Start port (3389)
     to_port     = local.bastion_ports.rdp # End port (3389)
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["0.0.0.0/0"] # Anywhere
   }
 
   # Allow all outbound traffic
@@ -45,13 +45,13 @@ resource "aws_security_group" "windows" {
   # RDP Access from Bastion only
   ingress {
     description     = "RDP from Bastion"
-    from_port       = local.windows_ports.rdp
+    from_port       = local.windows_ports.rdp #3389
     to_port         = local.windows_ports.rdp
     protocol        = "tcp"
     security_groups = [aws_security_group.bastion.id]
   }
 
-  # WinRM HTTP from Bastion
+  # WinRM HTTP from Bastion #5985
   ingress {
     description     = "WinRM HTTP from Bastion"
     from_port       = local.windows_ports.winrm_http
@@ -60,7 +60,7 @@ resource "aws_security_group" "windows" {
     security_groups = [aws_security_group.bastion.id]
   }
 
-  # WinRM HTTPS from Bastion
+  # WinRM HTTPS from Bastion # 5986
   ingress {
     description     = "WinRM HTTPS from Bastion"
     from_port       = local.windows_ports.winrm_https
