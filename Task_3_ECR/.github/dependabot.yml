@@ -1,0 +1,248 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/services/API"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "API"
+    groups:
+      api-pydantic:
+        patterns:
+          - "pydantic"
+          - "pydantic_core"
+      api-fastapi:
+        patterns:
+          - "fastapi"
+          - "starlette"
+          - "uvicorn"
+      api-aws:
+        patterns:
+          - "boto3"
+          - "botocore"
+          - "s3transfer"
+      api-db:
+        patterns:
+          - "SQLAlchemy"
+          - "psycopg2"
+          - "PyMySQL"
+          - "oracledb"
+          - "alembic"
+      api-ml:
+        patterns:
+          - "numpy"
+          - "scipy"
+          - "pandas"
+      api-security:
+        patterns:
+          - "python-jose"
+          - "passlib"
+          - "cryptography"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "pip"
+    directory: "/services/data_drift"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "data_drift"
+    groups:
+      datadrift-pydantic:
+        patterns:
+          - "pydantic"
+          - "pydantic_core"
+      datadrift-fastapi:
+        patterns:
+          - "fastapi"
+          - "starlette"
+          - "uvicorn"
+          - "litestar"
+          - "litestar-htmx"
+      datadrift-aws:
+        patterns:
+          - "boto3"
+          - "botocore"
+          - "s3transfer"
+      datadrift-db:
+        patterns:
+          - "SQLAlchemy"
+          - "psycopg2"
+          - "PyMySQL"
+          - "oracledb"
+      datadrift-ml:
+        patterns:
+          - "numpy"
+          - "scipy"
+          - "pandas"
+          - "scikit-learn"
+          - "statsmodels"
+          - "joblib"
+          - "evidently"
+      datadrift-testing:
+        patterns:
+          - "polyfactory"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "pip"
+    directory: "/services/fairness"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "fairness"
+    groups:
+      fairness-pydantic:
+        patterns:
+          - "pydantic"
+          - "pydantic_core"
+      fairness-fastapi:
+        patterns:
+          - "fastapi"
+          - "starlette"
+          - "uvicorn"
+      fairness-aws:
+        patterns:
+          - "boto3"
+          - "botocore"
+          - "s3transfer"
+      fairness-db:
+        patterns:
+          - "SQLAlchemy"
+          - "psycopg2"
+          - "PyMySQL"
+          - "oracledb"
+      fairness-ml:
+        patterns:
+          - "numpy"
+          - "scipy"
+          - "pandas"
+          - "scikit-learn"
+          - "statsmodels"
+          - "joblib"
+          - "aif360"
+          - "fairlearn"
+          - "tensorflow"
+          - "keras"
+          - "torch"
+          - "matplotlib"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "pip"
+    directory: "/services/regression"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "regression"
+    groups:
+      regression-pydantic:
+        patterns:
+          - "pydantic"
+          - "pydantic_core"
+      regression-fastapi:
+        patterns:
+          - "fastapi"
+          - "starlette"
+          - "uvicorn"
+      regression-aws:
+        patterns:
+          - "boto3"
+          - "botocore"
+          - "s3transfer"
+      regression-db:
+        patterns:
+          - "SQLAlchemy"
+          - "psycopg2"
+          - "PyMySQL"
+          - "oracledb"
+      regression-ml:
+        patterns:
+          - "numpy"
+          - "scipy"
+          - "pandas"
+          - "scikit-learn"
+          - "statsmodels"
+          - "joblib"
+          - "evidently"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "pip"
+    directory: "/services/classification"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "classification"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "pip"
+    directory: "/services/what_if"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "what_if"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/API"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "API"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/data_drift"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "data_drift"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/fairness"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "fairness"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/regression"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "regression"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/classification"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "classification"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "docker"
+    directory: "/services/what_if"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "what_if"
+    target-branch: "develop"
+    rebase-strategy: auto
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    target-branch: "develop"
+    rebase-strategy: auto

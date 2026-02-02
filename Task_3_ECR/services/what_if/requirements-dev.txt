@@ -1,0 +1,15 @@
+boto3
+category-encoders
+fastapi
+joblib
+numpy
+onnxruntime
+pandas
+python-dotenv
+python-jose==3.5.0
+python-multipart
+scikit-learn
+setuptools
+shap
+uvicorn[standard]
+ydata-profiling>=4.16.1

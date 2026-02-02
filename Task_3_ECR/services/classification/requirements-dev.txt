@@ -1,0 +1,2 @@
+pre-commit>=4.5.0
+# you can add other dev tools later like mypy, ruff, pytest, etc.

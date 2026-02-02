@@ -1,0 +1,37 @@
+[
+    {
+        "id": "cf77dff8e21815f2ca291f2736581827",
+        "metric_id": "ValueDrift(column=previous)",
+        "value": 0.05391488470448312
+    },
+    {
+        "id": "a236144a5a8e98d61df1ab17ce15dac9",
+        "metric_id": "ValueDrift(column=job)",
+        "value": 0.07360574057730465
+    },
+    {
+        "id": "369eced23cc00fa2054bb34183cbe14d",
+        "metric_id": "ValueDrift(column=marital)",
+        "value": 0.04209536840043061
+    },
+    {
+        "id": "3a4389f62f6a9720415e27025a4f8bd6",
+        "metric_id": "ValueDrift(column=education)",
+        "value": 0.039206823060968406
+    },
+    {
+        "id": "8cf8ab7cd381b761a9dcf1040a6b4124",
+        "metric_id": "ValueDrift(column=default)",
+        "value": 0.017309486420672086
+    },
+    {
+        "id": "2f36eadbfe9ec018d49603e96afe75c1",
+        "metric_id": "ValueDrift(column=housing)",
+        "value": 0.07433120674925132
+    },
+    {
+        "id": "41dfe1d668989370b8b2a6dffeb22d8a",
+        "metric_id": "ValueDrift(column=loan)",
+        "value": 0.0408820703230399
+    }
+]

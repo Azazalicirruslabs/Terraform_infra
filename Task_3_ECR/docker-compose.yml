@@ -1,0 +1,64 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: services/API/Dockerfile
+    container_name: api
+    expose:
+      - 8000
+
+  data_drift:
+    build:
+      context: .
+      dockerfile: services/data_drift/Dockerfile
+    container_name: data_drift
+    expose:
+      - 8000
+
+  fairness:
+    build:
+      context: .
+      dockerfile: services/fairness/Dockerfile
+    container_name: fairness
+    expose:
+      - 8000
+
+  regression:
+    build:
+      context: .
+      dockerfile: services/regression/Dockerfile
+    container_name: regression
+    expose:
+      - 8000
+
+  classification:
+    build:
+      context: .
+      dockerfile: services/classification/Dockerfile
+    container_name: classification
+    expose:
+      - 8000
+
+
+  what_if:
+    build:
+      context: .
+      dockerfile: services/what_if/Dockerfile
+    container_name: what_if
+    expose:
+      - 8000
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - api
+      - data_drift
+      - fairness
+      - regression
+      - classification
+      - what_if
