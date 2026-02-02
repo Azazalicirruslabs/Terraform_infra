@@ -1,25 +1,24 @@
 terraform {
+  required_version = ">= 1.14.0"
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 6.7.0"
+      version = "~> 6.0"
     }
 
-    #USE AWS RESOURCE FOR KEY PAIR
-    tls = { # Generate PEM Key Pair
+    # TLS provider - Generate PEM Key Pair
+    tls = {
       source  = "hashicorp/tls"
-      version = "4.1.0"
+      version = "~> 4.0"
     }
-    local = { #Save .pem file locally
+
+    # Local provider - Save .pem file locally
+    local = {
       source  = "hashicorp/local"
-      version = "2.6.1"
+      version = "~> 2.6"
     }
-    # random = {
-    #   source  = "hashicorp/random"
-    #   version = "~> 3.1"
-    # }
   }
-  required_version = ">= 1.0"
 }
 
 provider "aws" {
